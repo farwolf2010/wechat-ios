@@ -9,6 +9,8 @@
 #import "WXApiManager.h"
 #import "farwolf.h"
 #import "farwolf_weex.h"
+WX_PLUGIN_Entry(WXApiManager)
+
 @implementation WXApiManager
 
 #pragma mark - LifeCycle
@@ -21,6 +23,9 @@
     return instance;
 }
 
+-(void)initEntry:(NSMutableDictionary*)lanchOption{
+    [[WXApiManager sharedManager]initHandler];
+}
 
 -(void)initHandler
 {
